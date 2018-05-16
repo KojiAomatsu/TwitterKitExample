@@ -7,12 +7,41 @@
 //
 
 import UIKit
+import TwitterKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var secondButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                print("signed in as \(String(describing: session?.userName))");
+            } else {
+                print("error: \(String(describing: error?.localizedDescription))");
+            }
+        })
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
+
+        secondButton.addTarget(self, action: #selector(self.onClick(_:)), for: .touchUpInside)
+
+    }
+
+    @objc func onClick(_ sender: AnyObject) {
+        TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
+            if (session != nil) {
+                print(session?.userID ?? "userID")
+                print(session?.userName ?? "userName")
+                print(session?.authToken ?? "authToken")
+                print(session?.authTokenSecret ?? "authTokenSecret")
+                print("signed in as \(String(describing: session?.userName))");
+            } else {
+                print("error: \(String(describing: error?.localizedDescription))");
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

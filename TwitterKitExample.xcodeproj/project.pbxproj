@@ -14,6 +14,9 @@
 		BE6F1FE020AB277400D1BCCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6F1FDE20AB277400D1BCCD /* LaunchScreen.storyboard */; };
 		BE6F1FEB20AB277500D1BCCD /* TwitterKitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F1FEA20AB277500D1BCCD /* TwitterKitExampleTests.swift */; };
 		BE6F1FF620AB277500D1BCCD /* TwitterKitExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F1FF520AB277500D1BCCD /* TwitterKitExampleUITests.swift */; };
+		BE6F200720AB2B6500D1BCCD /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6F200420AB2B6500D1BCCD /* TwitterKit.framework */; };
+		BE6F200820AB2B6500D1BCCD /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6F200520AB2B6500D1BCCD /* TwitterCore.framework */; };
+		BE6F200920AB2B6500D1BCCD /* TwitterShareExtensionUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6F200620AB2B6500D1BCCD /* TwitterShareExtensionUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,10 @@
 		BE6F1FF120AB277500D1BCCD /* TwitterKitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterKitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6F1FF520AB277500D1BCCD /* TwitterKitExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterKitExampleUITests.swift; sourceTree = "<group>"; };
 		BE6F1FF720AB277500D1BCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6F200420AB2B6500D1BCCD /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
+		BE6F200520AB2B6500D1BCCD /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Carthage/Build/iOS/TwitterCore.framework; sourceTree = "<group>"; };
+		BE6F200620AB2B6500D1BCCD /* TwitterShareExtensionUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterShareExtensionUI.framework; path = Carthage/Build/iOS/TwitterShareExtensionUI.framework; sourceTree = "<group>"; };
+		BE6F200B20AB353D00D1BCCD /* TwitterKitExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterKitExample-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6F200720AB2B6500D1BCCD /* TwitterKit.framework in Frameworks */,
+				BE6F200820AB2B6500D1BCCD /* TwitterCore.framework in Frameworks */,
+				BE6F200920AB2B6500D1BCCD /* TwitterShareExtensionUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +91,7 @@
 				BE6F1FE920AB277500D1BCCD /* TwitterKitExampleTests */,
 				BE6F1FF420AB277500D1BCCD /* TwitterKitExampleUITests */,
 				BE6F1FD320AB277400D1BCCD /* Products */,
+				BE6F200320AB2B6400D1BCCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				BE6F1FD520AB277400D1BCCD /* AppDelegate.swift */,
+				BE6F200B20AB353D00D1BCCD /* TwitterKitExample-Bridging-Header.h */,
 				BE6F1FD720AB277400D1BCCD /* ViewController.swift */,
 				BE6F1FD920AB277400D1BCCD /* Main.storyboard */,
 				BE6F1FDC20AB277400D1BCCD /* Assets.xcassets */,
@@ -125,6 +137,16 @@
 			path = TwitterKitExampleUITests;
 			sourceTree = "<group>";
 		};
+		BE6F200320AB2B6400D1BCCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE6F200520AB2B6500D1BCCD /* TwitterCore.framework */,
+				BE6F200420AB2B6500D1BCCD /* TwitterKit.framework */,
+				BE6F200620AB2B6500D1BCCD /* TwitterShareExtensionUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +157,7 @@
 				BE6F1FCE20AB277400D1BCCD /* Sources */,
 				BE6F1FCF20AB277400D1BCCD /* Frameworks */,
 				BE6F1FD020AB277400D1BCCD /* Resources */,
+				BE6F200A20AB2B6D00D1BCCD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -188,7 +211,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "青松洸司";
 				TargetAttributes = {
 					BE6F1FD120AB277400D1BCCD = {
@@ -253,6 +276,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BE6F200A20AB2B6D00D1BCCD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterShareExtensionUI.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE6F1FCE20AB277400D1BCCD /* Sources */ = {
@@ -329,6 +371,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -336,6 +379,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -386,6 +430,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -393,6 +438,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -428,10 +474,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X73Q3QXK7Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwitterKitExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koji.TwitterKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TwitterKitExample/TwitterKitExample-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -443,10 +494,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X73Q3QXK7Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TwitterKitExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koji.TwitterKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TwitterKitExample/TwitterKitExample-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
